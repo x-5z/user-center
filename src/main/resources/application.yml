@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+  flyway:
+    baseline-on-migrate: true
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: youxi-service
+
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 9100
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.z5x.model
+
+
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/z5x?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root@123
+
+
