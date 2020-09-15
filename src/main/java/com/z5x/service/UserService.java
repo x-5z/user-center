@@ -2,7 +2,10 @@ package com.z5x.service;
 
 import com.z5x.dao.UserMapper;
 import com.z5x.model.User;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,7 +15,6 @@ import java.util.List;
  */
 
 public interface UserService {
-
 
     /** 获得所有用户
      * @return List
